@@ -17,7 +17,7 @@ class Inventory:
         return report
 
     @staticmethod
-    def import_data(file_path: str, report_type: str) -> str:
+    def import_data(file_path, report_type):
         extension = file_path.split(".")[-1]
         if extension == 'csv':
             importer = CsvImporter()

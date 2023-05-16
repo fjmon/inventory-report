@@ -4,9 +4,9 @@ from inventory_report.importer.importer import Importer
 
 class CsvImporter(Importer):
     @staticmethod
-    def import_data(file_path: str) -> list:
+    def import_data(file_path):
         if not file_path.endswith('.csv'):
-            raise ValueError('extensão inválida')
+            raise ValueError('Arquivo inválido')
 
         with open(file_path, newline="") as file:
             reader = csv.DictReader(file)

@@ -4,9 +4,9 @@ from inventory_report.importer.importer import Importer
 
 class XmlImporter(Importer):
     @staticmethod
-    def import_data(file_path: str) -> list:
+    def import_data(file_path):
         if not file_path.endswith('.xml'):
-            raise ValueError('Extensão inválida')
+            raise ValueError('Arquivo inválido')
 
         tree = ET.parse(file_path)
         roots = tree.getroot()
