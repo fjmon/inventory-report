@@ -11,9 +11,10 @@ class XmlImporter(Importer):
         tree = ET.parse(file_path)
         roots = tree.getroot()
         stock = []
+        item = {}
         for root in roots:
-            item_wanted = {}
             for subroot in root:
-                item_wanted[subroot.tag] = subroot.text
-            stock.append(item_wanted)
+                item[subroot.tag] = subroot.text
+            stock.append(item)
+            item = {}
         return stock

@@ -49,4 +49,7 @@ class Inventory:
         if extension not in loaders:
             raise ValueError("Extensão inválida")
 
-        return report(loaders[extension](file_path))
+        stock = loaders[extension](file_path)
+        final_report = report(stock)
+
+        return final_report
